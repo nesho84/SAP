@@ -1,7 +1,11 @@
 <?php
-session_start();
+$url = "home";
 
-$active = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
+if (isset($_GET['url'])) {
+  $url = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
+}
+
+$active = $url;
 
 include "./includes/header.php";
 ?>
@@ -9,8 +13,7 @@ include "./includes/header.php";
 <main id="content" class="px-3">
   <?php
   // Dinamic Content here
-  if (isset($_GET['url'])) {
-    $url = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
+  if ($url !== "home") {
     include "./pages/" . $url . ".php";
   } else {
     include "./pages/home.php";
