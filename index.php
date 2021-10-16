@@ -14,8 +14,9 @@ include __DIR__ . "/includes/header.php";
 <main id="content" class="px-3">
   <?php
   // Dinamic Content here
-  if ($url !== "home") {
-    include "./pages/" . $url . ".php";
+  if (isset($_GET['url'])) {
+    $url = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
+    include __DIR__ . "/pages/" . $url . ".php";
   } else {
     include __DIR__ . "/pages/home.php";
   }
