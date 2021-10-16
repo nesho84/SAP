@@ -1,9 +1,14 @@
 <?php
-session_start();
+$url = "home";
 
-$active = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
+if (isset($_GET['url'])) {
+  $url = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
+}
 
-include "./includes/header.php";
+$active = $url;
+
+require __DIR__ . "/library/PDF.php";
+include __DIR__ . "/includes/header.php";
 ?>
 
 <main id="content" class="px-3">
@@ -13,9 +18,9 @@ include "./includes/header.php";
     $url = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
     include "./pages/" . $url . ".php";
   } else {
-    include "./pages/home.php";
+    include __DIR__ . "/pages/home.php";
   }
   ?>
 </main>
 
-<?php include "./includes/footer.php"; ?>
+<?php include __DIR__ . "/includes/footer.php"; ?>

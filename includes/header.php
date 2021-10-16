@@ -24,6 +24,7 @@
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a data-page="home" class="nav-link <?= $active == 'home' ? 'active' : '' ?>" aria-current="page">Home</a>
                     <a data-page="about" class="nav-link <?= $active == 'about' ? 'active' : '' ?>">About</a>
+                    <a data-page="dompdf" class="nav-link <?= $active == 'dompdf' ? 'active' : '' ?>">Dompdf</a>
                     <a data-page="login" class="nav-link <?= $active == 'login' ? 'active' : '' ?>">Login</a>
                 </nav>
             </div>
