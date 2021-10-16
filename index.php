@@ -16,7 +16,7 @@ include __DIR__ . "/includes/header.php";
   // Dinamic Content here
   if (isset($_GET['url'])) {
     $url = filter_var(rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL);
-    include "./pages/" . $url . ".php";
+    include __DIR__ . "/pages/" . $url . ".php";
   } else {
     include __DIR__ . "/pages/home.php";
   }
