@@ -11,10 +11,16 @@ window.onpopstate = function (event) {
 function showPage(page) {
   fetch(`pages/${page}.php`)
     .then((response) => response.text())
-    .then((text) => {
-      document.querySelector("#content").innerHTML = text;
+    .then((data) => {
 
-      // Make top menu links active
+
+      document.querySelector("#content").innerHTML = data;
+
+      // document.querySelector("#content").innerHTML = `
+      // <iframe width="500" height="500" src="data:application/pdf;base64,${data}"></iframe>
+      // `;
+
+      // Mark top menu links as active
       document.querySelectorAll(".nav-link").forEach((link) => {
         link.classList.remove("active");
 

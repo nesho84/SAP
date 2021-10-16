@@ -7,7 +7,8 @@ if (isset($_GET['url'])) {
 
 $active = $url;
 
-include "./includes/header.php";
+require __DIR__ . "/library/PDF.php";
+include __DIR__ . "/includes/header.php";
 ?>
 
 <main id="content" class="px-3">
@@ -16,9 +17,9 @@ include "./includes/header.php";
   if ($url !== "home") {
     include "./pages/" . $url . ".php";
   } else {
-    include "./pages/home.php";
+    include __DIR__ . "/pages/home.php";
   }
   ?>
 </main>
 
-<?php include "./includes/footer.php"; ?>
+<?php include __DIR__ . "/includes/footer.php"; ?>
