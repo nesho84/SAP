@@ -33,6 +33,6 @@ function create_pdf($html, $filename = '', $stream = false, $paper = 'A4', $orie
         file_put_contents($file, $dompdf->output());
         chmod(dirname(__DIR__) . '/pdfs/' . $filename . '.pdf', 0777);
 
-        return 'http://' . $_SERVER['HTTP_HOST'] . '/SAP/pdfs/' . $filename . '.pdf';
+        return 'http://' . $_SERVER['HTTP_HOST'] . '/My_FRAMEWORKS/SAP/pdfs/' . $filename . '.pdf';
     }
 }

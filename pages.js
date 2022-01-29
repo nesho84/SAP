@@ -13,7 +13,6 @@ function showPage(page) {
     .then((response) => response.text())
     .then((data) => {
 
-
       document.querySelector("#content").innerHTML = data;
 
       // document.querySelector("#content").innerHTML = `

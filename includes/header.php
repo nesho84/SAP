@@ -20,7 +20,7 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="mb-auto">
             <div>
-                <h3 class="float-md-start mb-0"><a href="http://localhost/SAP/">Home</a></h3>
+                <h3 class="float-md-start mb-0"><a href="http://localhost/My_FRAMEWORKS/SAP/">Home</a></h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a data-page="home" class="nav-link <?= $active == 'home' ? 'active' : '' ?>" aria-current="page">Home</a>
                     <a data-page="about" class="nav-link <?= $active == 'about' ? 'active' : '' ?>">About</a>

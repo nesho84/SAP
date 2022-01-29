@@ -34,13 +34,13 @@ $html = '
 ';
 
 if (function_exists('create_pdf')) {
-    // Create PDF file
-    $pdf = create_pdf($html, 'test1', false);
+  // Create PDF file
+  $pdf = create_pdf($html, 'test1', false);
 } else {
-    require dirname(__DIR__) . "/library/PDF.php";
-    $pdf = create_pdf($html, 'test1', false);
+  require dirname(__DIR__) . "/library/PDF.php";
+  $pdf = create_pdf($html, 'test1', false);
 }
 
 
 // Show in the iframe
-echo '<iframe width="100%" height="700" frameborder="0" src="' . $pdf . '"></iframe>';
+echo '<iframe name="pdf_frame" width="100%" height="700px" frameborder="0" src="' . $pdf . '"></iframe>';
